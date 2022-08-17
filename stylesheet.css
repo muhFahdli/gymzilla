@@ -1,0 +1,795 @@
+html, body,
+ul, ol, li,
+h1, h2, h3, h4, h5, h6, p,
+form, input, div {
+  margin: 0;
+  padding: 0;
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+li{
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
+}
+
+/* tiffany amelia */
+.container{
+    max-width: 1170px;
+    width: 100%;
+    padding: 100px 20px;
+    margin: 0 auto;
+}
+
+.header{
+    position: fixed;
+    background-color: rgb(222, 219, 217);
+    color:rgb(54, 54, 54);
+    height: 80px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    z-index: 50;
+}
+
+.header-logo{
+    font-family:'Pacifico', cursive;
+    font-style:normal;
+    letter-spacing: 3px;
+    font-size: 20px;
+    font-weight: bold;
+    float: left;
+    padding:30px 0;
+    cursor: pointer;
+}
+
+#menu {
+    padding-top: 12px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    float: right;
+}
+
+#menu a {
+    color: black;
+    display: inline-block;
+    cursor: pointer;
+    padding: 25px;
+    height: 100%;
+    transition: 0.3s ease-in-out;
+}
+
+#menu a:hover {
+    color: white;
+    background-color: rgb(54, 54, 54);
+    border-radius: 5px;
+}
+
+.top-wrapper{
+
+    color:rgb(48, 48, 48);
+    background-image:url(humphrey-muleba-dDp-6pXrYik-unsplash.jpg);
+    background-size: cover;
+    height: 100vh;
+    text-align: left;
+    width: 100%;
+}
+
+
+
+.top-wrapper h1{
+    font-size: 45px;
+    padding: 10px 0px;
+    margin: 0 auto;
+    color: rgb(54, 54, 54);
+}
+
+.top-wrapper p{
+    margin-bottom: 50px;
+    color: rgb(54, 54, 54);
+    letter-spacing: 2px;
+}
+
+.btn{
+
+    padding-top:8px;
+    padding-bottom:8px;
+    padding-left:20px;
+    padding-right:20px;
+    color:white;
+    display:inline-block;
+    opacity:0.8;
+    border-radius:4px;
+}
+
+.btn:hover{
+    opacity:1;
+}
+
+.registered{
+    background-color: rgb(109, 105, 105);
+}
+
+.registered{
+    text-decoration: none;
+}
+
+.btn-wrapper i{
+    margin-right: 8px;
+}
+
+.btn-wrapper{
+    margin-top:15px;
+    margin-bottom:15px;
+}
+
+.fa{
+    margin-right:5px;
+}
+.menu-icon{
+    color: rgb(222, 219, 217);
+    float: right;
+    width: 0;
+    height: 0;
+}
+
+/*tifany amelia*/
+
+
+/*konten 1*/
+.style-wrapper {
+    padding-bottom: 80px;
+}
+.container-2{
+    max-width: 1170px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+.heading {
+    padding-top: 60px;
+    padding-bottom: 30px;
+    color: #5f5d60;
+}
+
+.heading h2 {
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+}
+
+
+.news{
+    float: left;
+    width: 30%;
+}
+.tengah {
+    margin: 0 3%;
+}
+.news-icon img{
+    width: 80%;
+    height:175px;
+    padding-bottom: 20px;
+
+}
+.newses{
+    text-align: center;
+    margin-bottom: 50px;
+}
+.news-icon p{
+    font-weight: bold;
+    font-size: 17px;
+    text-align: center;
+}
+.txt-contents{
+    width: 80%;
+    margin: 0 auto;
+    display: inline-block;
+    
+}
+.txt-wrapper{
+    height: 600px;
+    background-image: url("data:image/jpeg;base64,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");
+    background-size: cover;
+    padding: 50px;
+}
+.text-1{
+    text-align: left;
+    padding: 50px 0;
+    
+}
+.text-1 h1{
+    color: black;
+    margin-bottom: 5px;
+}
+.text-1 p{
+    color: rgb(1, 3, 2);
+}
+.text-1 span{
+    list-style: none;
+    background-color: white;
+    line-height: 36px;
+}
+.gmbr{
+    width: 50%;
+    float: right;
+}
+.gmbr img{
+    width: 300px;
+    height: auto;
+    padding-top: 100px;
+    padding-left: 100px;
+    
+    
+}
+/*konten 1*/
+
+/*konten 2*/
+/* start css conten */
+.content{
+    background-color: #fff;
+    width: 100%;
+    overflow: hidden;
+}
+.content .container{
+    display:flex;
+    align-items: center;
+    padding:100px 0 ;
+    margin: 0 10%;
+}
+.content__menu{
+    list-style: none;
+    width:50%;
+}
+.menu__item{
+    border-top: 1px solid grey;
+    padding: 30px;
+    text-align: right;
+    cursor: pointer;
+}
+.menu__item:hover{
+    box-shadow: 8px 0px 0px rgb(222, 219, 217);
+    border: 1px solid grey;
+    color: #FFBEA5;
+}
+/* digunakan ketika css active */
+.active{
+    box-shadow: 8px 0px 0px rgb(222, 219, 217);
+    color: #FFBEA5;
+}
+
+.menu__link{
+    opacity: 1.59px;
+    font-size: 14px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    color: #171717;
+}
+.menu__link:hover{
+    color: #FFBEA5;
+}
+.text__content{
+    padding-left: 30px;
+    width: 100%;
+    font-family: 'Quicksand', sans-serif;
+}
+.barbel {
+ width: 30%; height: 30%; padding-bottom: 20px;
+}
+.judul{
+    font-size: 36px;
+    color: #3C3C3C;
+}
+.text__deskripsi{
+    padding-top: 20px;
+    text-align: justify;
+    font-size: 17px;
+    color:#9E9E9E;
+    line-height: 25px;
+}
+.poin{
+    display: flex;
+    color:#9E9E9E;
+}
+.text__content ul{
+    padding-left:20px ;
+}
+.text__content ul li{
+    padding: 10px;
+    font-size: 16px;
+    background-size: cover;
+}
+
+/* end css content */
+
+/* choice */
+.choice{
+    background-color:#dAdAdA;
+    text-align:center;
+    width:100%; 
+    padding-bottom: 80px; 
+}
+.choice .container{
+    width:100%;
+    margin:0 auto;
+}
+.choice .judul-lesson{
+    padding-bottom:30px;
+    color:#5f5d60;
+}
+.judul-choice h6{
+    color: #3C3C3C;
+    font-weight:normal;
+    font-family: sans-serif;
+    letter-spacing: 2px;
+    font-size: 18px;
+}
+.judul-choice h1{
+    font-size: 60px;
+    color: #3C3C3C;
+    font-family: 'Quicksand', sans-serif;
+    letter-spacing: 2px;
+    padding-bottom: 40px;
+    font-weight: bold;
+}
+.lessons{
+    width: 100%;
+}
+.lesson{
+    float:left; 
+    width:25%;
+}
+.img-lesson {
+    width: 90%;
+    height: 200px;
+}
+.lesson-ikon{
+    position:relative;
+}
+
+/*konten 2*/
+
+/*konten 3*/
+.class-timetable h1 {
+  font-family: Quicksand, sans-serif;
+  font-size: 60px;
+  font-weight: bold;
+  line-height: 1em;
+  letter-spacing: 1.5px;
+  color: #3c3c3c;
+}
+.class-timetable {
+  text-align: center;
+  padding: 50px 0;
+  color: #3c3c3c;
+}
+
+.class-timetable h6 {
+  font-size: 14px;
+  line-height: 1.14em;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+}
+
+.class-timetable a {
+  font-weight: 400;
+  width: 150px;
+  opacity: 0.9;
+  padding: 10px 0px;
+  display: inline-block;
+  font-weight: bold;
+  margin-right: 25px;
+}
+
+.event {
+    margin: 25px 0;
+    background-color: rgb(222, 219, 217);
+    color:rgb(54, 54, 54);
+    opacity: 1;
+}
+
+.class-timetable a:hover {
+  background-color:rgb(222, 219, 217);
+  color:rgb(54, 54, 54);
+  opacity: 1;
+}
+
+.schedule table {
+  font-family: "Quicksand" !important;
+  margin-top: 10px;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.schedule p {
+  opacity: 0.7;
+}
+table,
+th,
+td {
+  padding: 25px;
+  width: 100%;
+  border: 1px solid #e1e1e1;
+  border-collapse: collapse;
+}
+
+.yoga {
+  color: #ffbea5;
+}
+
+.zumba {
+  color: #4fbf70;
+}
+.balance {
+  color: #54c8cf;
+}
+
+.about-us {
+  background-image: url(https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1075&q=80);
+  background-size: cover;
+  text-align: center;
+}
+.about-us{
+    color: goldenrod;
+}
+
+.about-us h1 {
+    padding: 30px 0;
+    color: #e1e1e1;
+}
+.our-story {
+    padding: 0 100px;
+    background-color: rgba(120, 189, 132, .6);
+}
+
+.our-story h2 {
+    color: gold;
+    font-size: 50px;
+    padding-top: 30px;
+}
+
+.our-story p {
+    color: whitesmoke;
+    margin: 0 auto;
+    font-weight: 400;
+    padding-bottom:20px ;
+}
+
+footer {
+    background-color:  rgb(222, 219, 217);
+    height: 80px;
+    font-family:'Pacifico', cursive;
+    font-style:normal;
+    letter-spacing: 3px;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 80px;
+    cursor: pointer;
+}
+footer span {
+    font-size: 4px;
+}
+
+/*konten 3*/
+
+/*Muhammad fadhli*/
+@media(max-width: 1000px){
+    .container{
+        padding:150px 30px;
+    }
+    .menu-icon{
+        display: none;
+    }
+    .news-icon img{
+        width: 100%;
+        height:150px;
+    }
+    .txt-contents {
+        font-size: 15px;
+    }
+    .content .container {
+        display: block;
+        margin: 0;
+    }
+    .content__menu {
+        width: 100%;
+        display: flex;
+    }
+    .menu__item{
+        padding: 20px;
+        text-align: left;
+        border-bottom: 1px solid gray
+    }
+    .menu__item:hover{
+     background-color: #FFBEA2;
+ }
+ /* digunakan ketika css active */
+ .active{
+    background-color: #FFBEA2;
+}
+.menu__link{
+    font-size: 12px;
+}
+.barbel {
+    width: 25%; height: 25%;
+    padding-left: 80px;
+}
+.judul{
+    font-size: 28px;
+    padding-top: 20px;
+}
+.text__deskripsi{
+    font-size: 14px;
+    width: 100%;
+}
+.text__content ul{
+    padding-left:10px ;
+}
+.text__content ul li{
+    padding: 7px;
+    font-size: 12px;
+    background-size: cover;
+}
+.judul-choice h6{
+    padding-top:10px;
+    margin: 0px 0px 7px;
+    letter-spacing: 2px;
+    font-size: 15px;
+}
+.judul-choice h1{
+    font-size: 50px;
+    padding-bottom: 28px;
+}
+.lessons{
+    width: 100%;
+}
+.lesson{
+    float:left; 
+    width:50%;
+}
+.img-lesson {
+    width: 80%;
+    height: 200px;
+    padding-bottom: 20px;
+}
+.class-timetable h1 {
+  font-size: 45px;
+  line-height: .7em;
+  letter-spacing: 1px;
+}
+.class-timetable {
+  padding: 40px 0;
+  color: #3c3c3c;
+}
+
+.class-timetable h6 {
+  font-size: 12px;
+  line-height: 1.10em;
+}
+
+.class-timetable a {
+  width: 120px;
+  opacity: 0.9;
+  padding: 8px 0px;
+  margin-right: 20px;
+}
+
+.event {
+    margin: 20px 0;
+}
+
+
+.schedule table {
+  margin-top: 8px;
+  width: 80%;
+}
+table,
+th,
+td {
+    padding: 20px;
+}
+
+.about-us h1 {
+    padding: 20px 0;
+}
+.our-story {
+    padding: 0 70px;
+}
+
+.our-story h2 {
+    font-size: 30px;
+}
+.our-story p {
+    font-size: 15px;
+}
+}
+
+
+
+@media(max-width: 670px){
+    .container{
+        padding:150px 10px;
+    }
+    .menu{
+        display: none;
+    }
+    .menu-icon{
+        display: block;
+        color: black;
+        float: right;
+        width: 20px;
+        padding: 30px;
+    }
+    .top-wrapper h1{
+        font-size: 35px;
+        padding-bottom: 20px;
+    }
+
+    .top-wrapper p{
+        margin-bottom: 15px;
+        letter-spacing: 0;
+        font-size: 15px;
+    }
+    .news{
+        width: 100%;
+        padding-bottom: 15px;
+    }
+    .news-icon img{
+        width: 70%;
+        height:160px;
+        margin-top: 50px;
+    }
+    .txt-contents {
+        font-size: 12px;
+    }
+    .gmbr{
+        display: none;
+    }
+    .text p{
+        font-size: 12px;
+    }
+
+    .content__menu {
+        width: 100%;
+        display: flex;
+    }
+    .menu__item{
+        padding: 10px;
+        text-align: left;
+        border-bottom: .5px solid gray
+    }
+    .menu__item:hover{
+     background-color: #FFBEA2;
+ }
+ /* digunakan ketika css active */
+ .active{
+    background-color: #FFBEA2;
+}
+.menu__link{
+    font-size: 10px;
+}
+.barbel {
+    display: none;
+}
+.judul{
+    font-size: 20px;
+    padding-top: 15px;
+}
+.text__deskripsi{
+    font-size: 10px;
+    width: 100%;
+}
+.text__content ul{
+    padding-left:10px ;
+}
+.text__content ul li{
+    padding: 5px;
+    font-size: 10px;
+    background-size: cover;
+}
+.judul-choice h6{
+    padding-top:10px;
+    margin: 0px 0px 7px;
+    letter-spacing: 2px;
+    font-size: 12px;
+}
+.judul-choice h1{
+    font-size: 35px;
+    padding-bottom: 20px;
+}
+.lessons{
+    width: 100%;
+}
+.lesson{
+    float:left; 
+    width:100%;
+}
+.img-lesson {
+    width: 60%;
+    height: 250px;
+    padding-bottom: 20px;
+}
+.class-timetable h1 {
+    font-size: 30px;
+    line-height: .7em;
+    letter-spacing: 1px;
+}
+.class-timetable {
+  padding: 20px 0;
+  color: #3c3c3c;
+}
+
+.class-timetable h6 {
+  font-size: 10px;
+  line-height: 1.10em;
+}
+
+.class-timetable a {
+  width: 100px;
+  opacity: 0.9;
+  padding: 4px 0px;
+  margin-right: 0;
+}
+
+.event {
+    margin: 15px 0;
+}
+
+
+.schedule table {
+  margin-top: 5px;
+  width: 100%;
+}
+table,
+th,
+td {
+    padding: 18px;
+}
+.about-us{
+    text-align: left;
+}
+.about-us h1 {
+    padding: 20px 0;
+    text-align: center;
+}
+
+.our-story h2 {
+    font-size: 20px;
+}
+.our-story p {
+    font-size: 12px;
+}
+footer {
+    background-color:  rgb(222, 219, 217);
+    height: 80px;
+    font-family:'Pacifico', cursive;
+    font-style:normal;
+    text-align: center;
+}
+footer span {
+    display: none;
+}
+}
+/*Muhammad fahdli*/
